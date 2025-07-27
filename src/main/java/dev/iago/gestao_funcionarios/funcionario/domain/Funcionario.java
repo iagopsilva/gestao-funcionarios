@@ -1,5 +1,6 @@
 package dev.iago.gestao_funcionarios.funcionario.domain;
 
+import dev.iago.gestao_funcionarios.funcionario.application.api.FuncionarioRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
@@ -28,15 +29,15 @@ public class Funcionario {
     @NotBlank
     private String endereco;
 
-    public Funcionario(UUID id, String nome, String designacao, String salario, String telefone, String endereco) {
-        this.nome = nome;
-        this.designacao = designacao;
-        this.salario = salario;
-        this.telefone = telefone;
-        this.endereco = endereco;
-        this.dataHoraCdastro = LocalDateTime.now();
-    }
-
     private LocalDateTime dataHoraCdastro;
     private LocalDateTime dataHoraUltimaAlteracao;
+
+    public Funcionario(FuncionarioRequest funcionarioRequest) {
+        this.nome = funcionarioRequest.getNome();
+        this.designacao = funcionarioRequest.getDesignacao();
+        this.salario = funcionarioRequest.getSalario();
+        this.telefone = funcionarioRequest.getTelefone();
+        this.endereco = funcionarioRequest.getEndereco();
+        this.dataHoraCdastro = LocalDateTime.now();
+    }
 }
