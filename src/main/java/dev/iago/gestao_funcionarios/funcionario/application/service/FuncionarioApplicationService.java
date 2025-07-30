@@ -1,11 +1,14 @@
 package dev.iago.gestao_funcionarios.funcionario.application.service;
 
+import dev.iago.gestao_funcionarios.funcionario.application.api.FuncionarioListResponse;
 import dev.iago.gestao_funcionarios.funcionario.application.api.FuncionarioRequest;
 import dev.iago.gestao_funcionarios.funcionario.application.api.FuncionarioResponse;
 import dev.iago.gestao_funcionarios.funcionario.domain.Funcionario;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @Log4j2
@@ -20,5 +23,12 @@ public class FuncionarioApplicationService implements FuncionarioService {
         return FuncionarioResponse.builder()
                 .idFuncionario(funcionario.getIdFuncionario())
                 .build();
+    }
+
+    @Override
+    public List<FuncionarioListResponse> buscaTodosFuncionarios() {
+        log.info("[inicia] FuncionarioApplicationService - buscaTodosFuncionarios");
+        log.info("[finaliza] FuncionarioApplicationService - buscaTodosFuncionarios");
+        return List.of();
     }
 }
