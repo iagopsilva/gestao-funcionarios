@@ -33,11 +33,13 @@ public class Funcionario {
     private LocalDateTime dataHoraUltimaAlteracao;
 
     public Funcionario(FuncionarioRequest funcionarioRequest) {
+        this.idFuncionario = idFuncionario;
         this.nome = funcionarioRequest.getNome();
         this.designacao = funcionarioRequest.getDesignacao();
         this.salario = funcionarioRequest.getSalario();
         this.telefone = funcionarioRequest.getTelefone();
         this.endereco = funcionarioRequest.getEndereco();
+        this.dataHoraUltimaAlteracao = dataHoraUltimaAlteracao;
         this.dataHoraCdastro = LocalDateTime.now();
     }
 }
