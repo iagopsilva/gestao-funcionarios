@@ -13,5 +13,5 @@ public interface FuncionarioService {
 
     List<FuncionarioListResponse> buscaTodosFuncionarios();
 
-    FuncionarioDetalhadoResponse buscaFuncionarioAatravesId(UUID idFuncionario);
+    FuncionarioDetalhadoResponse buscaFuncionarioAtravesId(UUID idFuncionario);
 }

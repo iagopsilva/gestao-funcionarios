@@ -1,5 +1,6 @@
 package dev.iago.gestao_funcionarios.funcionario.application.api;
 
+import dev.iago.gestao_funcionarios.funcionario.domain.Funcionario;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Value;
 
@@ -17,4 +18,15 @@ public class FuncionarioDetalhadoResponse {
 
     private LocalDateTime dataHoraCdastro;
     private LocalDateTime dataHoraUltimaAlteracao;
+
+    public FuncionarioDetalhadoResponse(Funcionario funcionario) {
+        this.idFuncionario = funcionario.getIdFuncionario();
+        this.nome = funcionario.getNome();
+        this.designacao = funcionario.getDesignacao();
+        this.salario = funcionario.getSalario();
+        this.telefone = funcionario.getTelefone();
+        this.endereco = funcionario.getEndereco();
+        this.dataHoraCdastro = funcionario.getDataHoraCdastro();
+        this.dataHoraUltimaAlteracao = funcionario.getDataHoraUltimaAlteracao();
+    }
 }
