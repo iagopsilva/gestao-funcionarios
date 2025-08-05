@@ -3,6 +3,7 @@ package dev.iago.gestao_funcionarios.funcionario.application.api;
 import dev.iago.gestao_funcionarios.funcionario.application.service.FuncionarioService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -45,6 +46,13 @@ public class FuncionarioController implements FuncionarioAPI{
         log.info("[idFuncionario] {}", idFuncionario);
         funcionarioService.deletaFuncionarioAtravesId(idFuncionario);
         log.info("[finaliza] FuncionarioController - deletaFuncionarioAtravesId");
+    }
+
+    @Override
+    public void patchAlteraFuncionario(UUID idFuncionario, FuncionarioAlteracaoRequest funcionarioAlteracaoRequest) {
+        log.info("[inicia] FuncionarioController - patchAlteraFuncionario");
+        log.info("[idFuncionario] {}", idFuncionario);
+        log.info("[finaliza] FuncionarioController - patchAlteraFuncionario");
     }
 
 }
