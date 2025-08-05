@@ -15,5 +15,5 @@ public interface FuncionarioService {
 
     FuncionarioDetalhadoResponse buscaFuncionarioAtravesId(UUID idFuncionario);
 
-    void deletaFuncionarioAtravesId(UUID idFuncionario);
+    void deletaFuncionarioAtravesId(UUID funcionario);
 }
