@@ -1,9 +1,6 @@
 package dev.iago.gestao_funcionarios.funcionario.application.service;
 
-import dev.iago.gestao_funcionarios.funcionario.application.api.FuncionarioDetalhadoResponse;
-import dev.iago.gestao_funcionarios.funcionario.application.api.FuncionarioListResponse;
-import dev.iago.gestao_funcionarios.funcionario.application.api.FuncionarioRequest;
-import dev.iago.gestao_funcionarios.funcionario.application.api.FuncionarioResponse;
+import dev.iago.gestao_funcionarios.funcionario.application.api.*;
 import dev.iago.gestao_funcionarios.funcionario.domain.Funcionario;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -49,6 +46,16 @@ public class FuncionarioApplicationService implements FuncionarioService {
         Funcionario funcionario = funcionarioRepository.buscaFuncionarioAtravesId(idFuncionario);
         funcionarioRepository.deletaFuncionario(funcionario);
         log.info("[finaliza] FuncionarioApplicationService - deletaFuncionarioAatravesId");
+
+    }
+
+    @Override
+    public void patchAlteraFuncionario(UUID idFuncionario, FuncionarioAlteracaoRequest funcionarioAlteracaoRequest) {
+        log.info("[inicia] FuncionarioApplicationService - patchAlteraFuncionario");
+        Funcionario funcionario = funcionarioRepository.buscaFuncionarioAtravesId(idFuncionario);
+        funcionario.altera(funcionarioAlteracaoRequest);
+        funcionarioRepository.salva(funcionario);
+        log.info("[finaliza] FuncionarioApplicationService - patchAlteraFuncionario");
 
     }
 }

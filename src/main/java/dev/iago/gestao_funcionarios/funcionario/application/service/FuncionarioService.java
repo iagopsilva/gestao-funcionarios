@@ -1,9 +1,6 @@
 package dev.iago.gestao_funcionarios.funcionario.application.service;
 
-import dev.iago.gestao_funcionarios.funcionario.application.api.FuncionarioDetalhadoResponse;
-import dev.iago.gestao_funcionarios.funcionario.application.api.FuncionarioListResponse;
-import dev.iago.gestao_funcionarios.funcionario.application.api.FuncionarioRequest;
-import dev.iago.gestao_funcionarios.funcionario.application.api.FuncionarioResponse;
+import dev.iago.gestao_funcionarios.funcionario.application.api.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,4 +13,6 @@ public interface FuncionarioService {
     FuncionarioDetalhadoResponse buscaFuncionarioAtravesId(UUID idFuncionario);
 
     void deletaFuncionarioAtravesId(UUID funcionario);
+
+    void patchAlteraFuncionario(UUID idFuncionario, FuncionarioAlteracaoRequest funcionarioAlteracaoRequest);
 }

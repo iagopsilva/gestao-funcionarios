@@ -12,7 +12,5 @@ public class FuncionarioAlteracaoRequest {
     @NotBlank
     private String salario;
     @NotBlank
-    private String telefone;
-    @NotBlank
     private String endereco;
 }

@@ -52,6 +52,7 @@ public class FuncionarioController implements FuncionarioAPI{
     public void patchAlteraFuncionario(UUID idFuncionario, FuncionarioAlteracaoRequest funcionarioAlteracaoRequest) {
         log.info("[inicia] FuncionarioController - patchAlteraFuncionario");
         log.info("[idFuncionario] {}", idFuncionario);
+        funcionarioService.patchAlteraFuncionario(idFuncionario, funcionarioAlteracaoRequest);
         log.info("[finaliza] FuncionarioController - patchAlteraFuncionario");
     }
 
